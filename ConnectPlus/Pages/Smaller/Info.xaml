@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.Info">
+    <StackLayout>
+        <StackLayout BackgroundColor="Black">
+            <Label Text="Quản lý"
+                   FontSize="13"
+                   HorizontalOptions="Start"
+                   Margin="20,10,0,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.8*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+
+                <Image x:Name="img"
+                       HeightRequest="15"
+                       WidthRequest="15"
+                       Grid.RowSpan="3"
+                       Grid.Column="0"/>
+                <Label x:Name="user"
+                       FontSize="14"
+                       HorizontalOptions="Start"
+                        TextColor="{x:StaticResource color_crema}"
+                       Grid.Column="1"
+                       Grid.Row="0"/>
+                <Label x:Name="number"
+                       FontSize="12"
+                       HorizontalOptions="Start"
+                        TextColor="{x:StaticResource color_crema}"
+                       Grid.Column="1"
+                       Grid.Row="2"/>
+            </Grid>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="Vào gian hàng!"
+                        FontSize="13"
+                        BackgroundColor="{x:StaticResource color_crema}"
+                        Clicked="NavigateToShop"/>
+                <Button Text="Xem đơn hàng của bạn"
+                        FontSize="13"
+                        BackgroundColor="{x:StaticResource color_crema}"
+                        Clicked="Button_Clicked"/>
+                <Button Text="Xem tin nhắn"
+                        FontSize="13"
+                        BackgroundColor="{x:StaticResource color_crema}"
+                        Clicked="Button_Clicked_1"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

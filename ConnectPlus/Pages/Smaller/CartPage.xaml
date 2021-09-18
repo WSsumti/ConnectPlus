@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.CartPage">
+    <StackLayout>
+        <Frame BorderColor="Black"
+               CornerRadius="5"
+               HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="l">
+                <Label FontSize="13"
+                       Margin="20,0,0,0"
+                       HorizontalOptions="Start"
+                       Text="{Binding Address,StringFormat='Địa chỉ giao hàng: {0}'}"/>
+            </StackLayout>
+        </Frame>
+        <ListView ItemsSource="{Binding Orders}"
+                  HasUnevenRows="True"
+                  x:Name="a">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame>
+                            <Grid Padding="10"
+                              RowDefinitions="auto,auto"
+                              ColumnDefinitions="auto,auto">
+                                <Label Text="{Binding Name}"
+                                           FontSize="13"
+                                           HorizontalOptions="Start"/>
+                                <Label Text="{Binding Price}"
+                                           FontSize="13"
+                                           HorizontalOptions="Start"
+                                       Grid.Column="1"/>
+                                <Stepper Grid.Column="0"
+                                         Grid.Row="1"
+                                         x:Name="step"
+                                         Value="1"
+                                         Increment="1"
+                                         Minimum="1"
+                                         HeightRequest="40"
+                                         WidthRequest="100"/>
+                                <Label Text="{Binding Path=Value}"
+                                       BindingContext="{x:Reference Name = step}"
+                                           FontSize="13"
+                                           HorizontalOptions="Start"
+                                       Grid.Column="1"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>            
+        </ListView>
+    </StackLayout>
+</ContentPage>

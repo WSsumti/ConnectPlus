@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:smaller="clr-namespace:ConnectPlus.Pages.Smaller"
+             x:Class="ConnectPlus.Pages.Smaller.ItemforPr">
+    <StackLayout>
+        <CollectionView x:Name="view">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <smaller:MyFrame CornerRadius="5"
+                           BorderColor="Black"
+                            HorizontalOptions="FillAndExpand"
+                                     ID="{Binding N0}">
+                        <smaller:MyFrame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </smaller:MyFrame.GestureRecognizers>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.5*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding Name, StringFormat='Tên: {0}'}"
+                               FontSize="12"
+                               Margin="30,0,0,0"
+                               Grid.Row="0"
+                                   x:Name="fr"/>
+                            <Label Text="{Binding Price, StringFormat='Giá: {0:0}'}"
+                               FontSize="12"
+                               Margin="30,0,0,0"
+                               Grid.Row="1"/>
+                        </Grid>
+                    </smaller:MyFrame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

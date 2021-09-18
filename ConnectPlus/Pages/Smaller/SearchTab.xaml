@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:smaller="clr-namespace:ConnectPlus.Pages.Smaller"
+             x:Class="ConnectPlus.Pages.Smaller.SearchTab"
+             BackgroundColor="White">
+    <StackLayout x:Name="layout">
+        
+        
+        <!--<SearchBar TextChanged="SearchBar_TextChanged" />
+
+        <CollectionView ItemsSource="{Binding SearchList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button Text="{Binding Name}"
+                            FontSize="12"
+                           HorizontalOptions="Start"
+                           BackgroundColor="White"
+                           Margin="15,0,0,0"
+                            x:Name="button"
+                            Command="{Binding Search}"
+                            CommandParameter="{Binding .}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+    </StackLayout>
+</ContentPage>

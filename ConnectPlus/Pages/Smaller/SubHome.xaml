@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.SubHome">
+    <StackLayout Padding="15,0,15,0"
+                 BackgroundColor="#ffead3">
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#ffdfd3"
+                       HeightRequest="32"
+                       HasShadow="true">
+                    <Label Text="Trang chủ" FontSize="25" HorizontalOptions="Start" FontAttributes="Bold"/>
+                </Frame>
+                <Label Text="Bài viết bạn quan tâm" HorizontalOptions="Start" FontSize="20"/>
+                <StackLayout x:Name="layout">
+
+                </StackLayout>
+                <Label Text="Sản phẩm bạn có thể quan tâm" HorizontalOptions="Start" FontSize="20"/>
+                <Grid Padding="15" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <CollectionView ItemsSource="{Binding Items}"
+                            ItemsLayout="VerticalGrid,2"
+                            SelectedItem="{Binding Selected}"
+                            SelectionMode="Single"
+                            SelectionChangedCommand="{Binding SelectionCommand}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding Image.Source}"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"/>
+                                    <Label Grid.Row="1"
+                                   Text="{Binding Name}"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="End"/>
+                                    <Label Grid.Row="1"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="End"
+                                   Margin="0,0,5,0"
+                                   Text="{Binding Price, StringFormat='{0}VND'}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.ShopCreater">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Label x:Name="title"
+                           HorizontalOptions="Center"
+                           FontSize="14"/>
+                    
+                    
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout>
+                            <Label Text="Tên sản phẩm: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Entry FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   x:Name="name"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout>
+                            <Label Text="Giá sản phẩm: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Entry FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   x:Name="price"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout>
+                            <Label Text="Số lượng sản phẩm này có trong kho: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Entry FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   x:Name="quantity"/>
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout>
+                            <Label Text="Từ khóa để người mua có thể tìm thấy sản phẩm này: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Entry FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   x:Name="Keyword"/>
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.3*"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox x:Name="isdiscount"
+                                  Grid.Column="0"
+                                  HorizontalOptions="End"
+                                  IsChecked="true"/>
+                                <Label Text="Sản phẩm này có giảm giá"
+                               Grid.Column="1"
+                               HorizontalOptions="Start"/>
+                            </Grid>
+                            <Label Text="Phần trăm giảm giá (1-100%): "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            
+                            <Entry FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   x:Name="discount"
+                                   IsEnabled="{Binding Path=IsChecked}"
+                                   BindingContext="{Binding Source={x:Reference isdiscount}}"/>
+
+                            <Label Text="Giảm giá cho đến hết ngày: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <DatePicker x:Name="datepicker"
+                                        IsEnabled="{Binding Path=IsChecked}"
+                                        BindingContext="{Binding Source={x:Reference isdiscount}}"/>
+
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout x:Name="desImgLayout">
+                            <Label Text="Thêm hình ảnh mô tả về sản phẩm: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Button x:Name="desImg"
+                                    Text="Thêm hình ảnh"
+                                    HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="5"
+                           BorderColor="Black">
+                        <StackLayout x:Name="desVideoLayout">
+                            <Label Text="Thêm video mô tả về sản phẩm: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Button x:Name="desVideo"
+                                    Text="Thêm video"
+                                    HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="5"
+                           BorderColor="Black"
+                           HeightRequest="200">
+                        <StackLayout x:Name="desStringLayout">
+                            <Label Text="Thêm mô tả về sản phẩm: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                            <Editor FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   HeightRequest="200"
+                                   x:Name="DesString"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Button Text="Thêm sản phẩm"
+                            Font="13"
+                            HorizontalOptions="Center"
+                            x:Name="save"/>
+                    <StackLayout HeightRequest="100"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.Purchase">
+    <StackLayout>
+        <ScrollView>
+            <StackLayout x:Name="layout"
+                         BackgroundColor="White">
+                
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

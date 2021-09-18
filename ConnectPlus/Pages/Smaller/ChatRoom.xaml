@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.ChatRoom"
+             xmlns:viewmodel="clr-namespace:ConnectPlus.ViewModel">
+    <ContentPage.BindingContext>
+        <viewmodel:ChatViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Padding="10">
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"/>
+        <ListView ItemsSource="{Binding Messages}"
+                  HasUnevenRows="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowDefinitions="auto,auto">
+                            <Grid ColumnDefinitions="40,*" IsVisible="{Binding IsOwner}">
+                                <Label Text="{Binding Message}"
+                                       Grid.Column="1"
+                                       HorizontalOptions="End"/>
+                            </Grid>
+                            <Grid ColumnDefinitions="*,40" IsVisible="{Binding IsOwner, Converter={StaticResource BooleanToVisibility}, ConverterParameter=Inverse}">
+                                <Label Text="{Binding Message}"
+                                       HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry Text="{Binding ChatMessage.Message}"/>
+        <Button Text="Send"
+                IsEnabled="{Binding IsConnected}"
+                Command="{Binding SendMessageCommand}"/>
+    </StackLayout>
+</ContentPage>

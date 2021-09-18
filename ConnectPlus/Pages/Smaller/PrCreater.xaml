@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.PrCreater">
+    <StackLayout>
+        <Label Text="Tạo bài viết"
+               HorizontalOptions="Center"
+               FontSize="15"
+               FontAttributes="Bold"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox HorizontalOptions="Start"
+                      Margin="10,0,0,0"
+                      Grid.Column="0"
+                      x:Name="check"/>
+            <Label Text="Bài viết có phải quảng cáo cho sản phẩm không?"
+                   HorizontalOptions="Start"
+                   FontSize="12"
+                   Grid.Column="1"/>
+        </Grid>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="Thêm hình ảnh"
+                        FontSize="13"
+                        Clicked="Button_Clicked"
+                        HorizontalOptions="Start"
+                        Margin="10,0,0,0"/>
+                <Frame CornerRadius="5"
+                           BorderColor="Black"
+                           HeightRequest="200"
+                        HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label Text="Nội dung: "
+                                   FontSize="13"
+                                   HorizontalOptions="Start"
+                                   Margin="20,0,0,0"/>
+                        <Editor FontSize="12"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="20,0,0,0"
+                                   HeightRequest="200"
+                                   x:Name="cont"/>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Thêm sản phẩm"
+                            Font="13"
+                            HorizontalOptions="Center"
+                            x:Name="item"/>
+                <Button Text="Lưu bài viết"
+                            Font="13"
+                            HorizontalOptions="Center"
+                            x:Name="save"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

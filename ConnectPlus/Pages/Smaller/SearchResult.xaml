@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Smaller.SearchResult">
+    <!--<NavigationPage.TitleView>
+        <Label x:Name="naviKeyword"/>
+    </NavigationPage.TitleView>-->
+    <StackLayout x:Name="layout">
+        <Frame HorizontalOptions="FillAndExpand"
+               BorderColor="Black"
+               CornerRadius="5">
+            <Label x:Name="naviText"
+                   FontSize="12"
+                   Margin="20,0,0,0"/>
+        </Frame>
+        <ScrollView x:Name="scroll">
+            <StackLayout x:Name="inside">
+                
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConnectPlus.Pages.Main.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+    <!--<StackLayout BackgroundColor="Black">
+        <StackLayout BackgroundColor="White"
+                     Margin="0,200,0,0">
+            <Label Text="Email"
+               FontSize="13"
+                   Margin="20,0,0,0"
+               HorizontalOptions="StartAndExpand"/>
+            <Frame CornerRadius="26"
+               BackgroundColor="{x:StaticResource color_crema}">
+                <Entry FontSize="13"
+               Margin="20,15,20,0"
+               HorizontalOptions="FillAndExpand"
+               x:Name="AppUser"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout BackgroundColor="Black"
+                     WidthRequest="20">
+
+        </StackLayout>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Password"
+               FontSize="13"
+               Margin="20,20,0,0"
+               HorizontalOptions="StartAndExpand"/>
+            <Frame CornerRadius="26"
+               BackgroundColor="{x:StaticResource color_crema}">
+                <Entry FontSize="13"
+               Margin="20,15,20,0"
+               HorizontalOptions="FillAndExpand"
+               IsPassword="True"
+               x:Name="AppPass"/>
+            </Frame>
+        </StackLayout>
+        <Button Text="Login"
+                FontSize="12"
+                HorizontalOptions="End"
+                Margin="0,0,25,0"
+                Clicked="LoginButton"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Đăng ký"
+                    FontSize="12"
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Margin="20,10,0,0"
+                    Clicked="Registration"/>
+            <Button Text="Quên mật khẩu"
+                    FontSize="12"
+                    FontAttributes="Bold"
+                    HorizontalOptions="End"
+                    Margin="0,10,20,0"
+                    Grid.Column="1"
+                    Clicked="ForgotPassword"/>
+
+        </Grid>
+    </StackLayout>-->
+    <StackLayout BackgroundColor="#e6e6e6">
+        <Grid>
+            <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="150" BackgroundColor="#fad0c4" Padding="0" Margin="0">
+                    <Label Text="CONNECT PLUS" TextColor="Black" FontAttributes="Bold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+                    <StackLayout>
+
+
+                        <StackLayout Margin="10">
+                            <Label Text="SIGN IN" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Padding="0" Margin="15,10">
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                   
+                                    <Entry FontSize="13"
+                                           HorizontalOptions="FillAndExpand"
+                                           x:Name="AppUser"/>   
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    
+                                    <Entry FontSize="13"
+                                           HorizontalOptions="FillAndExpand"
+                                           IsPassword="True"
+                                           x:Name="AppPass"/>       
+                                </StackLayout>
+                            </Frame>
+
+                            <StackLayout  Orientation="Horizontal">
+
+
+                                <Button Text="Quên mật khẩu"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="End"
+                                        Margin="0,10,20,0"
+                                        Grid.Column="1"
+                                        BackgroundColor="{x:StaticResource color_crema}"
+                                        Clicked="ForgotPassword"/>  
+
+                            </StackLayout>
+
+
+                            <Button Text="Login"
+                                    FontSize="12"
+                                    HorizontalOptions="End"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="{x:StaticResource color_crema}"
+                                    Clicked="LoginButton"/> 
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Label Text="Still Not Connected ?" TextColor="DarkGray" FontSize="Small"/>
+                                <Button Text="Đăng ký"
+                                        FontSize="12"
+                                        Grid.Column="0"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Start"
+                                        BackgroundColor="{x:StaticResource color_crema}"
+                                        Clicked="Registration"/>    
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>
